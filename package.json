@@ -32,6 +32,7 @@
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "autoprefixer": "^8.0.0",
     "browser-sync": "^2.18.8",
+    "browserify": "^16.1.1",
     "const": "^1.0.0",
     "cross-env": "^5.0.0",
     "css-mqpacker": "^6.0.0",
@@ -62,6 +63,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-wait": "0.0.2",
     "gulp.spritesmith": "^6.3.0",
+    "gulplog": "^1.0.0",
     "husky": "^0.14.3",
     "jstransformer-markdown-it": "^2.0.0",
     "lint-staged": "^7.0.0",
@@ -71,7 +73,8 @@
     "postcss-inline-svg": "^3.0.0",
     "postcss-object-fit-images": "^1.1.2",
     "stylelint": "^9.1.1",
-    "vinyl-buffer": "^1.0.0"
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
     "baron": "^3.0.3",

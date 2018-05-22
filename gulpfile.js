@@ -389,6 +389,31 @@ gulp.task('js', function (callback) {
   }
 });
 
+gulp.task('javascript', function () {
+
+  var browserify = require('browserify');
+  var gulp = require('gulp');
+  var source = require('vinyl-source-stream');
+  var buffer = require('vinyl-buffer');
+  var uglify = require('gulp-uglify');
+  var sourcemaps = require('gulp-sourcemaps');
+  var log = require('gulplog');
+
+  var b = browserify({
+    entries: dirs.srcPath + '/js/entry.js',
+    debug: true
+  });
+
+  return b.bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(uglify())
+    .on('error', log.error)
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(dirs.buildPath + '/js'));
+});
+
 // Ручная оптимизация изображений
 // Использование: folder=src/img npm start img:opt
 const folder = process.env.folder;

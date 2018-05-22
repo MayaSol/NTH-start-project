@@ -1,3 +1,9 @@
+$body-bg:                     #fff !default;
+$link-color:                  hsl(208, 98%, 43%) !default;
+$link-color--hover:           darken(hsl(208, 98%, 43%), 15%) !default;
+
+$screen-xl:                   1200px !default;
+
 
 // Сделаем viewport великим снова! (привет, IE10)
 // http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
@@ -44,9 +50,10 @@ body {
   // Типографика проекта — в блоке typo
   display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
   flex-direction: column;  // и прижимаем footer в IE 10-11
-  background-color: #fff;
+  background-color: $body-bg;
   margin: 0;
   min-height: 100%;
+  overscroll-behavior: none; // Нормализация прокрутки
 }
 
 [tabindex='-1']:focus {
@@ -141,6 +148,14 @@ a {
 
   &:visited {
     color: $link-color--hover;
+  }
+
+  // На больших экранах телефоны-ссылки делаем обычным текстом
+  @media (min-width: $screen-xl) {
+    white-space: nowrap;
+    pointer-events: none;
+    text-decoration: none;
+    color: inherit;
   }
 }
 
