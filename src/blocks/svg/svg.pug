@@ -8,6 +8,9 @@ mixin svg(svg_url, svg_id)
   //- Вызов:
         +svg("sprite-svg.svg","symbol_id")
 
+        a.action(href="#!")
+          +svg("","location")(class="icon-md icon-stroke")
+
   if svg_id
     svg(role='img')&attributes(attributes)
       use(xlink:href= svg_url + '#' + svg_id)
